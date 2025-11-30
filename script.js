@@ -8,8 +8,31 @@ const inventario = [
   { id: 5, nome: 'Borracha', preco: 2.50, estoque: 20 }
 ];
 
+
+
+function criaItemNome(nome){
+    const itemConteudo = document.createElement('p')
+    itemConteudo.textContent = nome
+    return itemConteudo
+}
+
+function criaItemPreco(preco){
+    const itemPreco = document.createElement('span')
+    itemPreco.textContent = preco
+    return itemPreco
+}
+
+function criaItemCard(nome, preco){
+    const itemCard = document.createElement('article')
+    const itemConteudo = criaItemNome(nome)
+    const itemPreco = criaItemPreco(preco)
+    itemCard.appendChild(itemConteudo)
+    itemCard.appendChild(itemPreco)
+    listaContainer.appendChild(itemCard)
+}
+
 function renderizarLista(dados){
-    dados.forEach(a => console.log(a.nome))
+    dados.forEach(a => criaItemCard(a.nome, a.preco))
 }
 
 renderizarLista(inventario)
