@@ -10,7 +10,7 @@ const inventario = [
 ];
 
 botaoFiltro.addEventListener('click', () =>{ 
-    filtragem()
+    filtraItem()
 })
 
 
@@ -40,7 +40,7 @@ function renderizarLista(dados){
     dados.forEach(a => criaItemCard(a.nome, a.preco))
 }
 
-function filtragem(){
+function filtraItem(){
     if(inputFiltro.value == ''){
         alert("Coloque um item válido")
         return
