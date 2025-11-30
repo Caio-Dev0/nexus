@@ -9,6 +9,10 @@ const inventario = [
   { id: 5, nome: 'Borracha', preco: 2.50, estoque: 20 }
 ];
 
+botaoFiltro.addEventListener('click', () =>{ 
+    filtragem()
+})
+
 
 
 function criaItemNome(nome){
@@ -34,6 +38,16 @@ function criaItemCard(nome, preco){
 
 function renderizarLista(dados){
     dados.forEach(a => criaItemCard(a.nome, a.preco))
+}
+
+function filtragem(){
+    if(inputFiltro.value == ''){
+        alert("Coloque um item válido")
+        return
+    }
+    const inventarioFiltrado = inventario.filter(a => a.nome == inputFiltro.value)
+    listaContainer.textContent = ''
+    inventarioFiltrado.forEach(b => criaItemCard(b.nome, b.preco))
 }
 
 renderizarLista(inventario)
