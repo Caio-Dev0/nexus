@@ -1,5 +1,6 @@
 const listaContainer = document.querySelector("#lista-container")
 const inputFiltro = document.querySelector("#filtro-texto")
+const botaoFiltro = document.querySelector('.btn-filtro')
 const inventario = [
   { id: 1, nome: 'Caderno', preco: 25.50, estoque: 10 },
   { id: 2, nome: 'Caneta', preco: 3.00, estoque: 50 },
