@@ -7,3 +7,11 @@ const inventario = [
   { id: 4, nome: 'Lápis', preco: 1.50, estoque: 100 },
   { id: 5, nome: 'Borracha', preco: 2.50, estoque: 20 }
 ];
+
+function renderizarLista(dados){
+    dados.forEach(a => console.log(a.nome))
+}
+
+renderizarLista(inventario)
+// Ideias: Cria um article que vai armazenar tanto o texto quanto o preço do Item
+// Separar cada função por suau responsabilidade
